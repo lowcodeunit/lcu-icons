@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { SVGIconsModel } from '../../models/svg-icon.model';
+import { SVGToMatIconModel } from '../../models/svg-to-mat-icon.model';
 
 @Injectable({
   providedIn: 'root'
@@ -15,13 +15,13 @@ import { SVGIconsModel } from '../../models/svg-icon.model';
  * Can use material theme colors when SVG fill property is removed
  */
 
-export class SvgMatIconsService {
+export class SvgToMatIconService {
 
   
   /**
    * List of icons
    */
-  protected icons: Array<SVGIconsModel>;
+  protected icons: Array<SVGToMatIconModel>;
 
   constructor(
     protected domSanitizer: DomSanitizer,
@@ -33,11 +33,11 @@ export class SvgMatIconsService {
     * @param icons List of svg icons
     * @param basePath base path to svg icons (/assets/svgs/etc.)
     */
-  public SetIcons(icons: Array<SVGIconsModel>, basePath: string): void {
+  public SetIcons(icons: Array<SVGToMatIconModel>, basePath: string): void {
 
     this.icons = icons;
 
-    this.icons.forEach((icon: SVGIconsModel) => {
+    this.icons.forEach((icon: SVGToMatIconModel) => {
       this.matIconRegistry.addSvgIcon(
         icon.Name,
         this.setPath(`${basePath}${icon.IconPath}`));
@@ -47,7 +47,7 @@ export class SvgMatIconsService {
   /**
    * Return list of icons
    */
-  public GetIcons(): Array<SVGIconsModel> {
+  public GetIcons(): Array<SVGToMatIconModel> {
     return this.icons;
   }
 

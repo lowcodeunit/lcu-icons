@@ -1,5 +1,5 @@
+import { SvgToMatIconService, SVGToMatIconModel } from '@lowcodeunit/lcu-icons-common';
 import { Component, OnInit } from '@angular/core';
-import { SVGIconsModel, SvgIconsService } from '@lcu/common';
 
 
 @Component({
@@ -11,13 +11,13 @@ export class HomeComponent implements OnInit {
 
   protected basePath: string;
 
-  constructor(protected svgIconsService: SvgIconsService) { 
-    this.basePath = '/icons/svgs/';
+  constructor(protected svgIconsService: SvgToMatIconService) { 
+    this.basePath = '/icons/svgs/'
   }
 
-  public ngOnInit(): void { 
+  public ngOnInit(): void {
 
-    const icons: Array<SVGIconsModel> =
+    const icons: Array<SVGToMatIconModel> =
     [
       { Name: 'download', IconPath: 'download.svg' },
       { Name: 'phone', IconPath: 'phone.svg' }

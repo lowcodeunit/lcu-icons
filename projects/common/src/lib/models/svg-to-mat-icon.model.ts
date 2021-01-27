@@ -1,4 +1,4 @@
-export class SVGIconsModel {
+export class SVGToMatIconModel {
 
     /**
      * Icon path - ex. (/home.svg)

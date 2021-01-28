@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   protected basePath: string;
 
   constructor(protected svgIconsService: SvgToMatIconService) { 
-    this.basePath = '/icons/svgs/'
+    this.basePath = '/icons/svgs/';
   }
 
   public ngOnInit(): void {

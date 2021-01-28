@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   constructor(protected svgIconsService: SvgToMatIconService) { 
     this.basePath = '/icons/svgs/';
+
   }
 
   public ngOnInit(): void {

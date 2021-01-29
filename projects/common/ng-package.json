@@ -5,6 +5,6 @@
     "entryFile": "src/lcu.api.ts"
   },
   "assets": [
-    "icons"
+    "assets"
   ]
 }

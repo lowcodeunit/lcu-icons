@@ -1,0 +1,8 @@
+{
+	"name": "@lowcodeunit/lcu-icons-lcu",
+	"version": "1.0.5-integration",
+	"peerDependencies": {
+		"@angular/common": "~8.1.2",
+		"@angular/core": "~8.1.2"
+	}
+}

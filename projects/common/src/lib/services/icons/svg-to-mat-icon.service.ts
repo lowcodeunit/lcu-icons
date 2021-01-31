@@ -7,6 +7,7 @@ import { SVGToMatIconModel } from '../../models/svg-to-mat-icon.model';
   providedIn: 'root'
 })
 
+
 /**
  * Registers custom svg icons to use with <mat-icon>
  *

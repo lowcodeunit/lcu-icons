@@ -1,8 +1,6 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
-import { PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 import { SVGToMatIconModel } from '../../models/svg-to-mat-icon.model';
 
 @Injectable({
@@ -21,8 +19,6 @@ import { SVGToMatIconModel } from '../../models/svg-to-mat-icon.model';
 export class SvgToMatIconService {
 
   
-  protected domain = (isPlatformServer(this.platformId)) ? 'http://localhost:4200/' : ''; 
-
   /**
    * List of icons
    */
@@ -30,8 +26,7 @@ export class SvgToMatIconService {
 
   constructor(
     protected domSanitizer: DomSanitizer,
-    protected matIconRegistry: MatIconRegistry,
-    @Inject(PLATFORM_ID) protected platformId: string) {
+    protected matIconRegistry: MatIconRegistry) {
    }
 
    /**
@@ -63,6 +58,6 @@ export class SvgToMatIconService {
    * @param url path to svg
    */
   protected setPath(url: string): SafeResourceUrl  {
-    return this.domSanitizer.bypassSecurityTrustResourceUrl(this.domain + url);
+    return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
     }
 }

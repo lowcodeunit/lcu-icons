@@ -56,11 +56,12 @@ export class SvgToMatIconService {
   public SetIconsAsLiterals(icons: Array<SVGToMatIconModel>): void {
 
     this.icons = icons;
-    
+
     this.icons.forEach((icon: SVGToMatIconModel) => {
-      this.matIconRegistry.addSvgIcon(
+      this.matIconRegistry.addSvgIconLiteral(
         icon.Name,
-        this.setPath(`${icon.IconLiteral}`));
+        this.domSanitizer.bypassSecurityTrustHtml(icon.IconLiteral)
+      );
     });
   }
 

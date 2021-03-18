@@ -30,7 +30,8 @@ export class SvgToMatIconService {
    }
 
    /**
-    *
+    * Register custom SVG icon using a URL
+    * 
     * @param icons List of svg icons
     * @param basePath base path to svg icons (/assets/svgs/etc.)
     */
@@ -42,6 +43,21 @@ export class SvgToMatIconService {
       this.matIconRegistry.addSvgIcon(
         icon.Name,
         this.setPath(`${basePath}${icon.IconPath}`));
+    });
+  }
+
+
+   /**
+    * Register custom SVG icon using an SVG literal ('<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE svg PUBLIC...')
+    * 
+    * @param icons List of svg icons
+    * @param basePath base path to svg icons (/assets/svgs/etc.)
+    */
+  public SetIconsAsLiteral(icons: Array<SVGToMatIconModel>): void {
+    this.icons.forEach((icon: SVGToMatIconModel) => {
+      this.matIconRegistry.addSvgIcon(
+        icon.Name,
+        this.setPath(`${icon.IconLiteral}`));
     });
   }
 

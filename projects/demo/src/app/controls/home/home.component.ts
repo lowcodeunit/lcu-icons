@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
       { Name: 'phone', IconPath: 'phone.svg' }
     ];
 
-    this.svgIconsService.SetIcons(icons, this.basePath);
+    // this.svgIconsService.SetIcons(icons, this.basePath);
   }
 
 }

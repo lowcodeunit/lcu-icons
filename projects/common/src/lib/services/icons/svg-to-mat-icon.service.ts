@@ -53,7 +53,10 @@ export class SvgToMatIconService {
     * @param icons List of svg icons
     * @param basePath base path to svg icons (/assets/svgs/etc.)
     */
-  public SetIconsAsLiteral(icons: Array<SVGToMatIconModel>): void {
+  public SetIconsAsLiterals(icons: Array<SVGToMatIconModel>): void {
+
+    this.icons = icons;
+    
     this.icons.forEach((icon: SVGToMatIconModel) => {
       this.matIconRegistry.addSvgIcon(
         icon.Name,

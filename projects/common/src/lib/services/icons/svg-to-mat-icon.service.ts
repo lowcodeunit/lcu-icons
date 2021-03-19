@@ -14,6 +14,8 @@ import { SVGToMatIconModel } from '../../models/svg-to-mat-icon.model';
  * <mat-icon color="primary" svgIcon="svgHome"></mat-icon>
  *
  * Can use material theme colors when SVG fill property is removed
+ * 
+ * https://material.angular.io/components/icon/overview
  */
 
 export class SvgToMatIconService {
@@ -74,6 +76,9 @@ export class SvgToMatIconService {
 
   /**
    * Register icon path
+   * 
+   * In order to guard against XSS vulnerabilities, any SVG URLs and HTML strings
+   * must be marked as trusted by Angular's DomSanitizer service
    *
    * @param url path to svg
    */

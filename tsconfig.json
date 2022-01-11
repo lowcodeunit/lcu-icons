@@ -25,8 +25,9 @@
 		"suppressImplicitAnyIndexErrors": true
 	},
 	"angularCompilerOptions": {
-		"enableIvy": false,
+		"enableI18nLegacyMessageIdFormat": false,
 		"strictInjectionParameters": true,
-		"strictTemplates": true
+		"strictInputAccessModifiers": true,
+		"strictTemplates": false
 	}
 }
